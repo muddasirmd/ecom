@@ -1,4 +1,4 @@
-<h1 align="center">Hi 👋, I'm Mudassir Ali</h1>
+<h1 align="center">Hi 👋, I'm Muddasir Malik</h1>
 <h3 align="center">I am enthusiastic software developer since my childhood. I work as a Senior Full Stack Software Engineer in WEB Technologies.</h3>
 <p align="center">I am a SaaS developer, I am working as a professional since 2019 and have experience in advanced JavaScript, Typescript, VueJS, ReactJS, SASS/SCSS, AJAX, jQuery, Bootstrap, Laravel, Codeigniter and CakePHP.
 I consider myself a person who follows modern web development practices and new technologies.
@@ -15,7 +15,7 @@ My technical skills:
 - Docker
 - Linux Server Setup
 
-I'm available via Skype, WhatsApp, Upwork, and email or visit mudassirali.com
+I'm available via Skype, WhatsApp, Upwork, and email or visit muddasirmalik.com
 
 I listen to you, understand your specifications, and ask questions if it is necessary. I’m a reliable worker, and I promise to do a job well in time. Then I do my best.</p>
 
@@ -31,13 +31,13 @@ I listen to you, understand your specifications, and ask questions if it is nece
 
 - 🤝And also with test automation frameworks [Selenium, Appium, RestAssured, Protractor](https://github.com/mszeles)
 
-- 👨‍💻 All of my projects are available at [https://github.com/mudassirali007](https://github.com/mudassirali007)
+- 👨‍💻 All of my projects are available at [https://github.com/muddasirmd](https://github.com/muddasirmd)
 
 - 💬 Ask me about **Web Development Technologies Trend and Scope**
 
-- 📫 How to reach me **mudassiraliansari@gmail.com**
+- 📫 How to reach me **muddasirmd2@gmail.com**
 
-- 📄 Know about my experiences [https://www.linkedin.com/in/mudassir007/](https://www.linkedin.com/in/mudassir007/)
+- 📄 Know about my experiences [https://www.linkedin.com/in/muddasir-malik-a60649122/](https://www.linkedin.com/in/muddasir-malik-a60649122/)
 
 ### Blogs posts
 <!-- BLOG-POST-LIST:START -->
@@ -49,7 +49,7 @@ https://www.indiehackers.com/post/clipping-magic-and-glorifyapp-bg-remover-105f0
 <a href="https://dev.to/mudassirali007" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/devto.svg" alt="mudassirali007" height="30" width="40" /></a>
   <a href="https://facebook.com/mudassirali007" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="mudassirali007" height="30" width="40" /></a>
 <a href="https://twitter.com/mudassirali007" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="mudassirali007" height="30" width="40" /></a>
-<a href="https://linkedin.com/in/mudassir007" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="mudassirali007" height="30" width="40" /></a>
+<a href="https://linkedin.com/in/muddasir-malik-a60649122" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="mudassirali007" height="30" width="40" /></a>
 <a href="https://stackoverflow.com/users/11974317" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg" alt="11974317" height="30" width="40" /></a>
 <a href="https://www.instagram.com/mudassirali007" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="mudassirali007" height="30" width="40" /></a>
 <a href="https://hashnode.com/@mudassir" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/hashnode.svg" alt="@mudassiraliansari" height="30" width="40" /></a>
@@ -72,8 +72,8 @@ https://www.indiehackers.com/post/clipping-magic-and-glorifyapp-bg-remover-105f0
 
 </p>
 
-<h3 align="left">Support:</h3>
-<p><a href="https://www.buymeacoffee.com/mudassirali"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="mudassirali007" /></a></p><br><br>
+<!-- <h3 align="left">Support:</h3>
+<p><a href="https://www.buymeacoffee.com/mudassirali"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="mudassirali007" /></a></p><br><br> -->
 
 <p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=mudassirali007&show_icons=true&locale=en&layout=compact" alt="mudassirali007" /></p>
 <br><br>
