@@ -11,3 +11,14 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 webpack.mix.js
+Step By Step Development.docx
+storage/
+.editorconfig
+.gitattributes
+.styleci.yml
+artisan
+phpunit.xml
+server.php
+webpack.mix.js
+composer.lock
+package-lock.json
