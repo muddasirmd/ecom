@@ -1,78 +1,80 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<h1 align="center">Hi 👋, I'm Mudassir Ali</h1>
+<h3 align="center">I am enthusiastic software developer since my childhood. I work as a Senior Full Stack Software Engineer in WEB Technologies.</h3>
+<p align="center">I am a SaaS developer, I am working as a professional since 2019 and have experience in advanced JavaScript, Typescript, VueJS, ReactJS, SASS/SCSS, AJAX, jQuery, Bootstrap, Laravel, Codeigniter and CakePHP.
+I consider myself a person who follows modern web development practices and new technologies.
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+Would be happy to help you with your project, feel free to share your ideas and we will discuss how we can collaborate to make your project successful.
+
+My technical skills:
+- Back-end: PHP
+- Database: MySQL, MariaDB
+- Frameworks: Laravel, CodeIgniter
+- I have experience with Shopify API
+- Front-end: JavaScript (jQuery, jQuery UI, Bootstrap, VueJs). HTML5, XHTML, CSS3 + Bootstrap.
+- Version control: GIT
+- Docker
+- Linux Server Setup
+
+I'm available via Skype, WhatsApp, Upwork, and email or visit mudassirali.com
+
+I listen to you, understand your specifications, and ask questions if it is necessary. I’m a reliable worker, and I promise to do a job well in time. Then I do my best.</p>
+
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=mudassirali007&label=Profile%20views&color=0e75b6&style=flat" alt="mudassirali007" /> </p>
+
+<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=mudassirali007" alt="mudassirali007" /></a> </p>
+
+<p align="left"> <a href="https://twitter.com/mudassirali007" target="blank"><img src="https://img.shields.io/twitter/follow/mudassirali007?logo=twitter&style=for-the-badge" alt="mudassirali007" /></a> </p>
+
+- 🔭 I’m currently working on variety of projects including like shopify app, laravel/vue SaSS, Filemaker API.
+
+- 🌱 I’m currently learning **Consulting and Managing Development Team**
+
+- 🤝And also with test automation frameworks [Selenium, Appium, RestAssured, Protractor](https://github.com/mszeles)
+
+- 👨‍💻 All of my projects are available at [https://github.com/mudassirali007](https://github.com/mudassirali007)
+
+- 💬 Ask me about **Web Development Technologies Trend and Scope**
+
+- 📫 How to reach me **mudassiraliansari@gmail.com**
+
+- 📄 Know about my experiences [https://www.linkedin.com/in/mudassir007/](https://www.linkedin.com/in/mudassir007/)
+
+### Blogs posts
+<!-- BLOG-POST-LIST:START -->
+https://www.indiehackers.com/post/clipping-magic-and-glorifyapp-bg-remover-105f0b8235
+<!-- BLOG-POST-LIST:END -->
+
+<h3 align="left">Connect with me:</h3>
+<p align="left">
+<a href="https://dev.to/mudassirali007" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/devto.svg" alt="mudassirali007" height="30" width="40" /></a>
+  <a href="https://facebook.com/mudassirali007" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="mudassirali007" height="30" width="40" /></a>
+<a href="https://twitter.com/mudassirali007" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="mudassirali007" height="30" width="40" /></a>
+<a href="https://linkedin.com/in/mudassir007" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="mudassirali007" height="30" width="40" /></a>
+<a href="https://stackoverflow.com/users/11974317" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg" alt="11974317" height="30" width="40" /></a>
+<a href="https://www.instagram.com/mudassirali007" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="mudassirali007" height="30" width="40" /></a>
+<a href="https://hashnode.com/@mudassir" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/hashnode.svg" alt="@mudassiraliansari" height="30" width="40" /></a>
+<a href="https://medium.com/@mudassiraliansari" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/medium.svg" alt="@mudassiraliansari" height="30" width="40" /></a>
+
 </p>
 
-## About Laravel
+<h3 align="left">Languages and Tools:</h3>
+<p align="left"> <a href="https://www.jetbrains.com/phpstorm/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/phpstorm-1.svg" alt="arduino" width="40" height="40"/> </a> 
+  <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> 
+  <a href="https://gitlab.com/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/gitlab.svg" alt="gitlab" width="40" height="40"/> </a> 
+  <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> 
+  <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> 
+  <a href="https://postman.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/> </a>
+ <a href="https://vuejs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/vue-js-1.svg" alt="vue" width="40" height="40"/> </a>
+ <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="react" width="40" height="40"/> </a>
+ <a href="https://laravel.com/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/laravel-2.svg" alt="laravel" width="40" height="40"/> </a>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+</p>
 
-## Learning Laravel
+<h3 align="left">Support:</h3>
+<p><a href="https://www.buymeacoffee.com/mudassirali"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="mudassirali007" /></a></p><br><br>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=mudassirali007&show_icons=true&locale=en&layout=compact" alt="mudassirali007" /></p>
+<br><br>
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=mudassirali007&show_icons=true&locale=en" alt="mudassirali007" /></p>
