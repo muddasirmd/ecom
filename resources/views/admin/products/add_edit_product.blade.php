@@ -189,7 +189,8 @@
                                             <option selected="selected">Select</option>
 
                                             @foreach ($fabrics as $fabric)
-                                                <option value={{ $fabric }}>{{ $fabric }}</option>
+                                                <option value={{ $fabric['key'] }} 
+                                                {{ $product->fabric == $fabric['key'] ? 'selected' : '' }}>{{ $fabric['val'] }}</option>
                                             @endforeach
 
                                         </select>
@@ -212,7 +213,8 @@
                                             <option selected="selected">Select</option>
 
                                             @foreach ($sleeves as $sleeve)
-                                                <option value={{ $sleeve }}>{{ $sleeve }}</option>
+                                                <option value={{ $sleeve['key'] }} 
+                                                {{ $product->sleeve == $sleeve['key'] ? 'selected' : '' }}>{{ $sleeve['val'] }}</option>
                                             @endforeach
 
                                         </select>
@@ -226,7 +228,8 @@
                                             <option selected="selected">Select</option>
 
                                             @foreach ($patterns as $pattern)
-                                                <option value={{ $pattern }}>{{ $pattern }}</option>
+                                                <option value={{ $pattern['key'] }} 
+                                                {{ $product->pattern == $pattern['key'] ? 'selected' : '' }} >{{ $pattern['val'] }}</option>
                                             @endforeach
 
                                         </select>
@@ -240,7 +243,8 @@
                                             <option selected="selected">Select</option>
 
                                             @foreach ($occasions as $occasion)
-                                                <option value={{ $occasion }}>{{ $occasion }}</option>
+                                                <option value={{ $occasion['key'] }}
+                                                {{ $product->occasion == $occasion['key'] ? 'selected' : '' }}>{{ $occasion['val'] }}</option>
                                             @endforeach
 
                                         </select>
@@ -257,7 +261,8 @@
                                             <option selected="selected">Select</option>
 
                                             @foreach ($fits as $fit)
-                                                <option value={{ $fit }}>{{ $fit }}</option>
+                                                <option value={{ $fit['key'] }} 
+                                                {{ $product->fit == $fit['key'] ? 'selected' : '' }}>{{ $fit['val'] }}</option>
                                             @endforeach
 
                                         </select>

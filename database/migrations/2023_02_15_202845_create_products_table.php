@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('product_color')->nullable();
             $table->float('product_price')->nullable();
             $table->float('product_discount')->nullable();
-            $table->float('product_weight')->nullable();
+            $table->string('product_weight')->nullable();
             $table->string('product_video')->nullable();
             $table->string('product_image')->nullable();
             $table->text('description')->nullable();

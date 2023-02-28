@@ -79,7 +79,6 @@ class ProductController extends Controller
             $data = $request->all();
             unset($data['_token']);
 
-
              // Upload Product Image
             if($request->hasFile('product_image')){
                 $imageTmp = $request->file('product_image');
@@ -104,11 +103,20 @@ class ProductController extends Controller
         }
 
         // Filter Arrays
-        $fabrics = ['Cotton', 'Polyester', 'Wool'];
-        $sleeves = ['Full Sleeve', 'Half Sleeve', 'Short Sleeve', 'Sleeveless'];
-        $patterns = ['Checked', 'Plain', 'Printed', 'Self', 'Solid'];
-        $fits = ['Regular', 'Slim'];
-        $occasions = ['Casual', 'Formal'];
+        $fabrics = [['key'=>'cotton', 'val'=>'Cotton'], ['key'=>'polyester', 'val'=>'Polyester'],
+        ['key'=>'wool', 'val'=>'Wool']];
+        
+        $sleeves = [['key'=>'full-sleeve','val'=>'Full Sleeve'], ['key'=>'half-sleeve', 'val'=>'Half Sleeve'], 
+        ['key'=>'short-sleeve','val'=>'Short Sleeve'], ['key'=>'sleeveless','val'=>'Sleeveless']];
+
+        $patterns = [['key'=>'checked','val'=>'Checked'], ['key'=>'plain','val'=>'Plain'], 
+        ['key'=>'printed', 'val'=>'Printed'], ['key'=>'self','val'=>'Self'], ['key'=>'solid','val'=>'Solid']];
+        
+        $fits = [['key'=>'regular','val'=>'Regular'], ['key'=>'slim','val'=>'Slim']];
+        
+        $occasions = [['key'=>'casual','val'=>'Casual'], ['key'=>'formal','val'=>'Formal']];
+
+
         
         // Sections with Categories and Subcategories
         $sections = Section::with(['categories'])->get();
