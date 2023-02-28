@@ -86,11 +86,32 @@ class ProductController extends Controller
                     // Get img Extension
                     $extension = $imageTmp->getClientOriginalExtension();
                     // Generate new image name
-                    $imageName = rand(111,99999).'.'.$extension;
-                    $imagePath = 'images/admin_images/product_images/'.$imageName;
+                    $imageName = $imageTmp->getClientOriginalName();
+                    $imageName = $imageName.'_'.rand(111,99999).'.'.$extension;
+                    $largeImagePath = 'images/admin_images/product_images/large/'.$imageName;
+                    $mediumImagePath = 'images/admin_images/product_images/medium/'.$imageName;
+                    $smallImagePath = 'images/admin_images/product_images/small/'.$imageName;
                     // Upload the image: Using Intervention package
-                    Image::make($imageTmp)->save($imagePath);
+                    Image::make($imageTmp)->save($largeImagePath);
+                    Image::make($imageTmp)->resize(420,500)->save($mediumImagePath);
+                    Image::make($imageTmp)->resize(160,200)->save($smallImagePath);
                     $data['product_image'] = $imageName;
+                }
+            }
+
+             // Upload Product Video
+             if($request->hasFile('product_video')){
+                $videoTmp = $request->file('product_video');
+                if($videoTmp->isValid()){
+                    // Get video Extension
+                    $extension = $videoTmp->getClientOriginalExtension();
+                    // Generate new image name
+                    $videoName = $videoTmp->getClientOriginalName();
+                    $videoName = $videoName.'_'.rand(111,99999).'.'.$extension;
+                    $videoPath = 'videos/product_ivideo/';
+                    // Upload the video: Using Intervention package
+                    $videoTmp->move($videoPath, $videoName);
+                    $data['product_video'] = $videoName;
                 }
             }
             // dd($product->id);

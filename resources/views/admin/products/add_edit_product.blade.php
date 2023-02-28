@@ -155,7 +155,7 @@
                                         @if (!empty($product->product_image))
                                             <div>
                                                 <img style="width: 80px; margin-top:5px;"
-                                                    src="{{ asset('images/admin_images/product_images/' . $product->product_image) }}">
+                                                    src="{{ asset('images/admin_images/product_images/small/' . $product->product_image) }}">
                                                 &nbsp;
                                                 
                                                 <a href="javascript:void(0)" class="confirmDelete" record='product-image'
