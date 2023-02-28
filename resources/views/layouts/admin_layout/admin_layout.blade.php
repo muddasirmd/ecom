@@ -36,10 +36,10 @@
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-  <!-- Preloader -->
+  {{-- <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="{{ asset('images/admin_images/AdminLTELogo.png') }}" alt="AdminLTELogo" height="60" width="60">
-  </div>
+  </div> --}}
 
     @include('layouts.admin_layout.admin_header')
 
@@ -88,9 +88,9 @@
 <!-- AdminLTE App -->
 <script src="{{ url('js/admin_js/adminlte.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{ url('js/admin_js/demo.js') }}"></script>
+{{-- <script src="{{ url('js/admin_js/demo.js') }}"></script> --}}
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{ url('js/admin_js/pages/dashboard.js') }}"></script>
+{{-- <script src="{{ url('js/admin_js/pages/dashboard.js') }}"></script> --}}
 {{-- Custom JS file for Admin --}}
 <script src="{{ url('js/admin_js/admin_scripts.js') }}"></script>
 <!-- Select2 -->
@@ -108,6 +108,8 @@
 <script src="{{ url('plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
 <script src="{{ url('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
 <script src="{{ url('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+{{-- Sweet Alert Lib --}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!-- Datatable script -->
 {{-- <script>
   $(function () {

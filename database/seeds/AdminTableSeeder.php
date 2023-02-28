@@ -27,7 +27,7 @@ class AdminTableSeeder extends Seeder
         DB::table('admins')->insert($adminRecords);
 
         // foreach($adminRecords as $key => $record){
-        //     \App\Admin::create($record);
+        //     \App\Models\Admin::create($record);
         // }
     }
 }

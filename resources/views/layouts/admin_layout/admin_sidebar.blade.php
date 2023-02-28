@@ -44,7 +44,7 @@
 
           {{-- Settings --}}
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link {{ request()->is('admin/settings') ? 'active' : request()->is('admin/update-admin-details') ? 'active' : '' }}">
+            <a href="#" class="nav-link {{ (request()->is('admin/settings') ? 'active' : request()->is('admin/update-admin-details')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-th"></i>
               <p>Settings
                 <i class="right fas fa-angle-left"></i>
@@ -68,7 +68,7 @@
 
           {{-- Catalogues  --}}
           <li class="nav-item menu-open">
-            <a href="#" class="nav-link {{ request()->is('admin/sections') ? 'active' : request()->is('admin/categories') ? 'active' : '' }}">
+            <a href="#" class="nav-link {{ (request()->is('admin/sections') ? 'active' : request()->is('admin/categories')) ? 'active' : '' }}">
               <i class="nav-icon fas fa-th"></i>
               <p>Catalogues
                 <i class="right fas fa-angle-left"></i>
@@ -85,6 +85,12 @@
                 <a href="{{ url('admin/categories') }}" class="nav-link {{ request()->is('admin/categories') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Categories</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('admin/products') }}" class="nav-link {{ request()->is('admin/products') ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Products</p>
                 </a>
               </li>
             </ul>

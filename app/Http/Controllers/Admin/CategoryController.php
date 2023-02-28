@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Category;
+use App\Models\Category;
+use App\Models\Section;
 use App\Http\Controllers\Controller;
-use App\Section;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use Session;
@@ -20,7 +20,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::with('section', 'parentCategory')->get();
-        // dd($categories);
+    
         return view('admin.categories.categories')->with(compact('categories'));
     }
 
@@ -43,11 +43,13 @@ class CategoryController extends Controller
             $title = "Add Category";
             $category = new Category();
             $categories = array();
+            $message = 'Category Added Successfully';
         }else{
             $title = "Edit Category";
             $category = Category::where('id', $id)->first();
-            $categories = Category::with("subCategories")->where(['parent_id'=>0, 'section_id'=>$category->section_id])->get();
+            $categories = Category::with("subCategories")->where(['parent_id'=> 0, 'section_id'=> $category->section_id])->get();
             $categories = json_decode(json_encode($categories), true);
+            $message = 'Category Updated Successfully';
         }
         
 
@@ -89,11 +91,12 @@ class CategoryController extends Controller
             $category->category_discount = $data['category_discount'];
             $category->description = $data['description'];
             $category->url = $data['url'];
+            $category->meta_title = $data['meta_title'];
             $category->meta_description = $data['meta_description'];
             $category->meta_keywords = $data['meta_keywords'];
             $category->save();
 
-            Session::flash('success_message', 'Category Added Successfully');
+            Session::flash('success_message', $message);
             return redirect('admin/categories');
         }
 
@@ -111,5 +114,40 @@ class CategoryController extends Controller
             
             return view('admin.categories.append_categories_level')->with(compact('categories'));
         }
+    }
+
+    public function deleteCategoryImage($id){
+        $category = Category::select('category_image')->where('id', $id)->first();
+
+        $imagePath = 'images/admin_images/category_images/';
+
+        // Delete File
+        if(file_exists($imagePath.$category->category_image)){
+            unlink($imagePath.$category->category_image);
+        }
+
+        // Delete image from table
+        Category::where('id', $id)->update(['category_image'=> '']);
+
+        session::flash('success_message','Category Image has been deleted.');
+        return redirect()->back();
+    }
+
+    public function deleteCategory($id){
+
+        $category = Category::where('id',$id)->first();
+
+        $imagePath = 'images/admin_images/category_images/';
+
+        // Delete Category Image File
+        if(!empty($category->category_image) && file_exists($imagePath.$category->category_image)){
+            unlink($imagePath.$category->category_image);
+        }
+
+        // Category::where('id',$id)->delete();
+        $category->delete();
+
+        session::flash('success_message','Category has been deleted.');
+        return redirect()->back();
     }
 }

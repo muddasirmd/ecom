@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Section;
+use App\Models\Section;
 
 class SectionsTableSeeder extends Seeder
 {

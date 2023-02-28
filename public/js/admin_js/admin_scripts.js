@@ -53,7 +53,7 @@ $(function(){
      * */
     $('#categories').DataTable({'responsive': true});
     //Initialize Select2 Elements
-    $('.select2').select2()
+    $('.select2').select2();
 
     $('.updateCategoryStatus').on('click', function(){
         var status = $(this).text()
@@ -75,7 +75,7 @@ $(function(){
         });
     });
     
-    // appedn categories level (sub-categories)
+    // append categories level (sub-categories)
     $('#section_id').on('change', function(){
         var sectionID = $(this).val();
         $.ajax({
@@ -90,5 +90,58 @@ $(function(){
                 alert(err)
             }
         });
-    })
+    });
+
+
+    /** 
+     * Products Page Code
+     * */
+    $('#products').DataTable({'responsive': true});
+
+    $('.updateProductStatus').on('click', function(){
+        var status = $(this).text()
+        var product_id = $(this).attr('product_id')
+        $.ajax({
+            type: 'post',
+            url: '/admin/update-product-status/',
+            data: {status: status, product_id: product_id},
+            success: function(resp){
+                if(resp['status'] == 0){
+                    $('#product-'+product_id).html('Inactive')
+                }else{
+                    $('#product-'+product_id).html('Active')
+                }
+            },
+            error: function(err){
+                alert(err)
+            }
+        });
+    });
+
+    /*
+    *   Confirm Delete Alert
+    */
+   $('.confirmDelete').on('click', function(){
+    let record = $(this).attr('record')
+    let recordId = $(this).attr('recordid')
+
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+        //   Swal.fire(
+        //     'Deleted!',
+        //     'Your file has been deleted.',
+        //     'success'
+        //   )
+        window.location.href = "/admin/delete-"+record+"/"+recordId
+        }
+      })
+   });
 })
