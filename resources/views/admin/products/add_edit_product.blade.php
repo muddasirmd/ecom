@@ -152,15 +152,17 @@
                                                 <span class="input-group-text">Upload</span>
                                             </div>
                                         </div>
-                                        @if (!empty($product->product_image))
+                                        @if (!empty($product->product_image) && file_exists('images/admin_images/product_images/small/'.$product->product_image))
                                             <div>
                                                 <img style="width: 80px; margin-top:5px;"
                                                     src="{{ asset('images/admin_images/product_images/small/' . $product->product_image) }}">
                                                 &nbsp;
-                                                
+
                                                 <a href="javascript:void(0)" class="confirmDelete" record='product-image'
                                                     recordid='{{ $product->id }}'>Delete Image</a>
                                             </div>
+                                        @else
+                                            <img style="width: 80px; margin-top:5px;" src="{{ asset('images/admin_images/no_image.png') }}">
                                         @endif
                                     </div>
                                  
@@ -271,7 +273,9 @@
                                     
                                     <label for="is_featured">Featured Item</label>
                                         <input type="checkbox" name="is_featured" id="is_featured"
-                                            value="{{ !empty($product->is_featured) ? $product->is_featured : old('is_featured') }}">
+                                            value="Yes" @if (!empty($product->is_featured) && $product->is_featured == "Yes")
+                                                checked 
+                                             @endif>
                                     <!-- /.form-group -->
                                 </div>
                                 <!-- /.col -->

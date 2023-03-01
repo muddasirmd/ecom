@@ -50,7 +50,7 @@
                     <th>Product Name</th>
                     <th>Section</th>
                     <th>Category</th>
-                    <th>Product Code</th>
+                    <th>Image</th>
                     <th>Price</th>
                     <th>Status</th>
                     <th>Action</th>
@@ -64,7 +64,13 @@
                             <td>{{ $product->product_name }}</td>
                             <td>{{ $product->category->section->name }}</td>
                             <td>{{ $product->category->category_name }}</td>
-                            <td>{{ $product->product_code }}</td>
+                            <td>
+                              @if (!empty($product->product_image) && file_exists('images/admin_images/product_images/small/'.$product->product_image))
+                                <img style="width: 100px" src="{{ asset('images/admin_images/product_images/small/'.$product->product_image) }}">
+                              @else
+                                <img style="width: 100px" src="{{ asset('images/admin_images/no_image.png') }}">
+                              @endif
+                              </td>
                             <td>{{ $product->product_price }}</td>
                             <td>
                                 @if ($product->status == 1)

@@ -79,6 +79,11 @@ class ProductController extends Controller
             $data = $request->all();
             unset($data['_token']);
 
+            // If is_featured is empty set it to No (Because when checkbox is unchecked then is_featured attribute will not come with post data)
+            if(empty($data['is_featured'])){
+                $data['is_featured'] = "No";
+            }
+
              // Upload Product Image
             if($request->hasFile('product_image')){
                 $imageTmp = $request->file('product_image');
