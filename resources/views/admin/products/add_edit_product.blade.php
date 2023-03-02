@@ -125,9 +125,24 @@
                                     
                                     <div class="form-group">
                                         <label for="product_video">Product Video</label>
-                                        <input type="text" class="form-control" name="product_video" id="product_video"
-                                            placeholder="Enter Product Video"
-                                            value="{{ !empty($product->id) ? $product->product_video : old('product_video') }}">
+                                        <div class="input-group">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" name="product_video"
+                                                    id="product_video">
+                                                <label class="custom-file-label" for="product_video">Choose file</label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">Upload</span>
+                                            </div>
+                                        </div>
+                                        @if (!empty($product->product_video) && file_exists('videos/product_images/small/'.$product->product_video))
+                                            <div>
+                                                <a href="{{ url('images/admin_images/product_images/small/' . $product->product_image) }}" download>Download</a>
+                                                &nbsp;|&nbsp;
+                                                <a href="javascript:void(0)" class="confirmDelete" record='product-video'
+                                                    recordid='{{ $product->id }}'>Delete Video</a>
+                                            </div>
+                                        @endif
                                     </div>
                                     <!-- /.form-group -->
                                     <div class="form-group">

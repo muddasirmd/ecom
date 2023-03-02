@@ -52,6 +52,8 @@ Route::prefix('/admin')->namespace('Admin')->group(function(){
         Route::match(['get', 'post'], 'add-edit-product/{id?}', 'ProductController@addEditProduct');
         Route::get('delete-product/{id}', 'ProductController@deleteProduct');
         Route::match(['get','post'], 'add-edit-product/{id?}',"ProductController@addEditProduct");
+        Route::get('delete-product-image/{id}', 'ProductController@deleteProductImage');
+        Route::get('delete-product-video/{id}', 'ProductController@deleteProductVideo');
     });    
     
 });
