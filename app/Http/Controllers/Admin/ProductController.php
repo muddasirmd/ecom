@@ -193,4 +193,17 @@ class ProductController extends Controller
         session::flash('success_message','Product video has been deleted.');
         return redirect()->back();
     }
+
+    public function addEditProductAttributes(Request $request, $id = null){
+
+        if($request->isMethod('post')){
+            $data = $request->all();
+            // dd($data);
+        }
+        $title = "Edit Attributes";
+        $product = Product::find($id);
+
+        
+        return view('admin.products.add_edit_product_attributes')->with(compact('product', 'title'));
+    }
 }

@@ -144,4 +144,29 @@ $(function(){
         }
       })
    });
+
+   /*
+        Product Attributes
+   */
+    var maxField = 10; //Input fields increment limitation
+    var addButton = $('.add_button'); //Add button selector
+    var wrapper = $('.field_wrapper'); //Input field wrapper
+    var fieldHTML = '<div class="my-1"><input type="text" name="size[]" value="" style="width:120px" placeholder="Size"/> <input type="text" name="sku[]" value="" style="width:120px" placeholder="SKU"/> <input type="text" name="price[]" value="" style="width:120px" placeholder="Price"/> <input type="text" name="stock[]" value="" style="width:120px" placeholder="Stock"/> <a href="javascript:void(0);" class="remove_button">Delete</a></div>'; //New input field html 
+    var x = 1; //Initial field counter is 1
+    
+    //Once add button is clicked
+    $(addButton).on('click', function(){
+        //Check maximum number of input fields
+        if(x < maxField){ 
+            x++; //Increment field counter
+            $(wrapper).append(fieldHTML); //Add field html
+        }
+    });
+    
+    //Once remove button is clicked
+    $(wrapper).on('click', '.remove_button', function(e){
+        e.preventDefault();
+        $(this).parent('div').remove(); //Remove field html
+        x--; //Decrement field counter
+    });
 })
