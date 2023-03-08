@@ -43,6 +43,13 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+                @elseif (Session::has('error_message'))
+                    <div class="alert alert-danger alert-dismissible mt-2 mx-2 fade show" role="alert">
+                        {{ Session::get('error_message') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
                 @endif
                 <form id="productAttributeForm" name="productAttributeForm" method="POST"
                     action="{{ empty($product->id) ? url('admin/add-edit-product-attributes') : url('admin/add-edit-product-attributes/' . $product->id) }}">
@@ -98,11 +105,12 @@
                                     <div class="form-group">
 
                                         <div class="field_wrapper">
+                                            
                                             <div>
                                                 <input type="text" name="size[]" value="" style="width:120px" placeholder="Size"/>
                                                 <input type="text" name="sku[]" value="" style="width:120px" placeholder="SKU"/>
-                                                <input type="text" name="price[]" value="" style="width:120px" placeholder="Price"/>
-                                                <input type="text" name="stock[]" value="" style="width:120px" placeholder="Stock"/>
+                                                <input type="number" name="price[]" value="" style="width:120px" placeholder="Price"/>
+                                                <input type="number" name="stock[]" value="" style="width:120px" placeholder="Stock"/>
                                                 <a href="javascript:void(0);" class="add_button" title="Add field">Add</a>
                                             </div>
                                         </div>
@@ -110,7 +118,6 @@
                                 </div>
                             </div>
                             <!-- /.row -->
-
                            
                         </div>
                         <!-- /.card-body -->
@@ -119,6 +126,49 @@
                         </div>
                     </div>
                 </form>
+
+                
+                <div class="card">
+                    <div class="card-header">
+                      <h2 class="card-title">Added Product Attributes</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                      <table id="products" class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                          <th>Size</th>
+                          <th>SKU</th>
+                          <th>Price</th>
+                          <th>Stock</th>
+                          <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                          @foreach ($product->productAttributes as $attr)
+                              
+                              <tr>
+                                  <td>{{ $attr->size }}</td>
+                                  <td>{{ $attr->sku }}</td>
+                                  <td>{{ $attr->price }}</td>
+                                  <td>{{ $attr->stock }}</td>
+                                
+                                  <td>                                  
+                                    
+                                </td>
+                              </tr>
+                          @endforeach
+                        
+                        </tbody>
+                       
+                      </table>
+                    </div>
+                    <!-- /.card-body -->
+                  </div>
+                  <!-- /.card -->
+
+
+
             </div>
             <!-- /.container-fluid -->
         </section>

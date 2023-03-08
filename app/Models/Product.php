@@ -20,4 +20,9 @@ class Product extends Model
     public function section(){
         return $this->belongsTo(Section::class, 'section_id')->select('id', 'name');
     }
+
+    public function productAttributes()
+    {
+        return $this->hasMany(ProductAttribute::class);
+    }
 }
