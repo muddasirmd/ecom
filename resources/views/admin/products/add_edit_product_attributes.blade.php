@@ -51,8 +51,8 @@
                         </button>
                     </div>
                 @endif
-                <form id="productAttributeForm" name="productAttributeForm" method="POST"
-                    action="{{ empty($product->id) ? url('admin/add-edit-product-attributes') : url('admin/add-edit-product-attributes/' . $product->id) }}">
+                <form id="addAttributeForm" name="addAttributeForm" method="POST"
+                    action="{{ empty($product->id) ? url('admin/add-product-attributes') : url('admin/add-product-attributes/' . $product->id) }}">
                     @csrf
                     <div class="card card-default">
                         <div class="card-header">
@@ -122,7 +122,7 @@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Add Attributes</button>
                         </div>
                     </div>
                 </form>
@@ -132,38 +132,53 @@
                     <div class="card-header">
                       <h2 class="card-title">Added Product Attributes</h3>
                     </div>
-                    <!-- /.card-header -->
-                    <div class="card-body">
-                      <table id="products" class="table table-bordered table-striped">
-                        <thead>
-                        <tr>
-                          <th>Size</th>
-                          <th>SKU</th>
-                          <th>Price</th>
-                          <th>Stock</th>
-                          <th>Action</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                          @foreach ($product->productAttributes as $attr)
-                              
-                              <tr>
-                                  <td>{{ $attr->size }}</td>
-                                  <td>{{ $attr->sku }}</td>
-                                  <td>{{ $attr->price }}</td>
-                                  <td>{{ $attr->stock }}</td>
-                                
-                                  <td>                                  
-                                    
-                                </td>
-                              </tr>
-                          @endforeach
-                        
-                        </tbody>
-                       
-                      </table>
-                    </div>
-                    <!-- /.card-body -->
+                    <form id="editAttributeForm" name="editAttributeForm" method="POST"
+                    action="{{ empty($product->id) ? url('admin/edit-product-attributes') : url('admin/edit-product-attributes/' . $product->id) }}">
+                    @csrf
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                        <table id="products" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                            <th>Size</th>
+                            <th>SKU</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach ($product->productAttributes as $attr)
+                                <tr>
+                                    <input type="hidden" name="attrId[]" value="{{ $attr->id }}">
+                                    <td>{{ $attr->size }}</td>
+                                    <td>{{ $attr->sku }}</td>
+                                    <td><input type="number" name="price[]" value="{{ $attr->price }}"></td>
+                                    <td><input type="number" name="stock[]" value="{{ $attr->stock }}"></td>
+                                    <td>                                  
+                                        @if ($attr->status == 1)
+                                            <a href="javascript:void(0)" class="updateProductAttributeStatus" id="product-attribute-{{$attr->id}}" 
+                                            product_attribute_id='{{$attr->id}}'>Active</a>
+                                        @else
+                                            <a href="javascript:void(0)" class="updateProductAttributeStatus" id="product-attribute-{{$attr->id}}" 
+                                            product_attribute_id='{{$attr->id}}'>Inactive</a>
+                                        @endif
+                                        &nbsp;&nbsp;
+                                        <a title="Delete Attribute" href="javascript:void(0)" class="confirmDelete" record='product-attribute' recordid='{{$attr->id}}'><i class="fas fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            
+                            </tbody>
+                        </table>
+                        </div>
+                        <!-- /.card-body -->
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Edit Attributes</button>
+                        </div>
+
+                    </form>
                   </div>
                   <!-- /.card -->
 

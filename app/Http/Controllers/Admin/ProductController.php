@@ -195,7 +195,7 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
-    public function addEditProductAttributes(Request $request, $id = null){
+    public function addProductAttributes(Request $request, $id = null){
 
         $title = "Edit Attributes";
         $product = Product::find($id);
@@ -237,5 +237,42 @@ class ProductController extends Controller
         }
         
         return view('admin.products.add_edit_product_attributes')->with(compact('product', 'title'));
+    }
+
+    public function editProductAttributes(Request $request, $id = null){
+
+        if($request->isMethod("post")){
+            $data = $request->all();
+            
+            foreach($data['attrId'] as $key => $val){
+                ProductAttribute::where('id', $val)->update(['price'=>$data['price'][$key], 'stock'=>$data['stock'][$key]]);
+
+            }
+        }
+
+        session::flash('success_message','Product Attributes Updated Successfully.');
+        return redirect()->back();
+    }
+
+    public function updateProductAttributeStatus(Request $request){
+        if($request->ajax()){
+            $data = $request->all();
+            
+            if($data['status'] == 'Active'){
+                $status = 0;
+            }else{
+                $status = 1;
+            }
+            ProductAttribute::where('id', $data['attr_id'])->update(['status'=>$status]);
+            return response()->json(['status'=>$status, 'attr_id'=>$data['attr_id']]);
+        }
+    }
+
+    public function deleteProductAttribute($id){
+
+        $product = ProductAttribute::where('id',$id)->delete();
+
+        session::flash('success_message','Attribute has been deleted.');
+        return redirect()->back();
     }
 }

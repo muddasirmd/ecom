@@ -163,10 +163,30 @@ $(function(){
         }
     });
     
-    //Once remove button is clicked
+    // Once remove button is clicked
     $(wrapper).on('click', '.remove_button', function(e){
         e.preventDefault();
         $(this).parent('div').remove(); //Remove field html
         x--; //Decrement field counter
+    });
+    // Product Attributes Status
+    $('.updateProductAttributeStatus').on('click', function(){
+        var status = $(this).text()
+        var attr_id = $(this).attr('product_attribute_id')
+        $.ajax({
+            type: 'post',
+            url: '/admin/update-product-attribute-status/',
+            data: {status: status, attr_id: attr_id},
+            success: function(resp){
+                if(resp['status'] == 0){
+                    $('#product-attribute-'+attr_id).html('Inactive')
+                }else{
+                    $('#product-attribute-'+attr_id).html('Active')
+                }
+            },
+            error: function(err){
+                alert(err)
+            }
+        });
     });
 })
