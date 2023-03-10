@@ -82,7 +82,9 @@
                                 @endif
                             </td>
                             <td>
-                              <a title="Add/Edit Attributes" href="{{ url('admin/add-product-attributes/'.$product->id) }}"><i class="fas fa-plus"></i></a>
+                              <a title="Add Attributes" href="{{ url('admin/add-product-attributes/'.$product->id) }}"><i class="fas fa-plus"></i></a>
+                              &nbsp;&nbsp;
+                              <a title="Add Images" href="{{ url('admin/add-product-image/'.$product->id) }}"><i class="fas fa-plus-circle"></i></a>
                               &nbsp;&nbsp;
                               <a title="Edit Product" href="{{ url('admin/add-edit-product/'.$product->id) }}"><i class="fas fa-edit"></i></a>
                               &nbsp;&nbsp;

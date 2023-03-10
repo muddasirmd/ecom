@@ -146,7 +146,7 @@ $(function(){
    });
 
    /*
-        Product Attributes
+        PRODUCT ATTRIBUTES
    */
     var maxField = 10; //Input fields increment limitation
     var addButton = $('.add_button'); //Add button selector
@@ -169,6 +169,7 @@ $(function(){
         $(this).parent('div').remove(); //Remove field html
         x--; //Decrement field counter
     });
+
     // Product Attributes Status
     $('.updateProductAttributeStatus').on('click', function(){
         var status = $(this).text()
@@ -189,4 +190,32 @@ $(function(){
             }
         });
     });
+
+    /* 
+        PRODUCT IMAGES
+    */
+
+    // Product Images Status
+    $('.updateProductImageStatus').on('click', function(){
+        var status = $(this).text()
+        var image_id = $(this).attr('product_image_id')
+        $.ajax({
+            type: 'post',
+            url: '/admin/update-product-image-status/',
+            data: {status: status, image_id: image_id},
+            success: function(resp){
+                if(resp['status'] == 0){
+                    $('#product-image-'+image_id).html('Inactive')
+                }else{
+                    $('#product-image-'+image_id).html('Active')
+                }
+            },
+            error: function(err){
+                alert(err)
+            }
+        });
+    });
+
+
+
 })

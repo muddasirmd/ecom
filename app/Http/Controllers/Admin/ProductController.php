@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Section;
 use App\Models\ProductAttribute;
+use App\Models\ProductImage;
 use Intervention\Image\Facades\Image;
 
 use Session;
@@ -195,10 +196,15 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
+    /**
+     * PRODUCT ATTRIBUTES SECTION
+     * 
+     */
+
     public function addProductAttributes(Request $request, $id = null){
 
         $title = "Edit Attributes";
-        $product = Product::find($id);
+        $product = Product::select('id', 'product_name', 'product_code', 'product_color', 'product_image')->find($id);
 
         if($request->isMethod('post')){
             $data = $request->all();
@@ -274,5 +280,32 @@ class ProductController extends Controller
 
         session::flash('success_message','Attribute has been deleted.');
         return redirect()->back();
+    }
+
+    /**
+     * PRODUCT IMAGES SECTION
+     * 
+     */
+
+    public function addProductImages(Request $request, $id = null){
+
+        $title = "Add Images";
+        $product = Product::select('id', 'product_name', 'product_code', 'product_color', 'product_image')->find($id);
+
+        return view('admin.products.add_edit_product_images')->with(compact('product', 'title'));
+    }
+
+    public function updateProductImageStatus(Request $request){
+        if($request->ajax()){
+            $data = $request->all();
+            
+            if($data['status'] == 'Active'){
+                $status = 0;
+            }else{
+                $status = 1;
+            }
+            ProductImage::where('id', $data['image_id'])->update(['status'=> $status]);
+            return response()->json(['status'=>$status, 'image_id'=>$data['image_id']]);
+        }
     }
 }
