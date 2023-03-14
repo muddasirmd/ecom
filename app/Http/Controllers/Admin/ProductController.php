@@ -292,6 +292,38 @@ class ProductController extends Controller
         $title = "Add Images";
         $product = Product::select('id', 'product_name', 'product_code', 'product_color', 'product_image')->find($id);
 
+        if($request->isMethod('post')){
+
+            if($request->hasFile('images')){
+                $images = $request->file('images');
+
+                foreach($images as $key => $img){
+
+                    // Upload Product Images
+                    if($img->isValid()){
+                        // Get img Extension
+                        $extension = $img->getClientOriginalExtension();
+                        // Generate new image name
+                        $imageName = $img->getClientOriginalName();
+                        $imageName = $imageName.'_'.rand(111,99999).'_'.time().'.'.$extension;
+                        $largeImagePath = 'images/admin_images/product_images/large/'.$imageName;
+                        $mediumImagePath = 'images/admin_images/product_images/medium/'.$imageName;
+                        $smallImagePath = 'images/admin_images/product_images/small/'.$imageName;
+                        // Upload the image: Using Intervention package
+                        Image::make($img)->save($largeImagePath);
+                        Image::make($img)->resize(420,500)->save($mediumImagePath);
+                        Image::make($img)->resize(160,200)->save($smallImagePath);
+
+                        // Save product Image
+                        $productImage = new ProductImage();
+                        $productImage->image = $imageName;
+                        $productImage->product_id = $product->id;
+                        $productImage->save();
+                    }
+                }
+            }           
+        }
+
         return view('admin.products.add_edit_product_images')->with(compact('product', 'title'));
     }
 
@@ -307,5 +339,31 @@ class ProductController extends Controller
             ProductImage::where('id', $data['image_id'])->update(['status'=> $status]);
             return response()->json(['status'=>$status, 'image_id'=>$data['image_id']]);
         }
+    }
+
+    public function deleteProductImages($id){
+        $img = ProductImage::select('image')->where('id', $id)->first();
+
+        $smallImagePath = 'images/admin_images/product_images/small/';
+        $mediumImagePath = 'images/admin_images/product_images/medium/';
+        $largeImagePath = 'images/admin_images/product_images/large/';
+
+        // Delete File
+        if(!empty($img->image) && file_exists($smallImagePath.$img->image)){
+            unlink($smallImagePath.$img->image);
+        }
+        if(!empty($img->image) && file_exists($mediumImagePath.$img->image)){
+            unlink($mediumImagePath.$img->image);
+        }
+        if(!empty($img->image) && file_exists($largeImagePath.$img->image)){
+            unlink($largeImagePath.$img->image);
+        }
+
+        // Delete image from table
+        // ProductImage::delete($id) is a querly buil;der method
+        ProductImage::destroy($id); // destroy is ORM Method
+
+        session::flash('success_message','Product Image has been deleted.');
+        return redirect()->back();
     }
 }

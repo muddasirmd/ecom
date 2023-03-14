@@ -51,7 +51,7 @@
                         </button>
                     </div>
                 @endif
-                <form id="addImageForm" name="addImageForm" method="POST" enctype="multipart/form-data"
+                <form id="addImagesForm" name="addImagesForm" method="POST" enctype="multipart/form-data"
                     action="{{ empty($product->id) ? url('admin/add-product-image') : url('admin/add-product-image/' . $product->id) }}">
                     @csrf
                     <div class="card card-default">
@@ -107,7 +107,7 @@
                                         <div class="field_wrapper">
                                             
                                             <div>
-                                                <input type="file" name="image[]" value="" multiple/>
+                                                <input type="file" name="images[]" value="" multiple/>
                                             </div>
                                         </div>
                                     </div>
@@ -160,7 +160,7 @@
                                             product_image_id='{{$img->id}}'>Inactive</a>
                                         @endif
                                         &nbsp;&nbsp;
-                                        <a title="Delete Image" href="javascript:void(0)" class="confirmDelete" record='product-image' recordid='{{$img->id}}'><i class="fas fa-trash"></i></a>
+                                        <a title="Delete Image" href="javascript:void(0)" class="confirmDelete" record='product-images' recordid='{{$img->id}}'><i class="fas fa-trash"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
