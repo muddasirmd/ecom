@@ -94,8 +94,8 @@ $(function(){
 
 
     /** 
-     * Products Page Code
-     * */
+         PRODUCTS PAGE CODE
+    * */
     $('#products').DataTable({'responsive': true});
 
     $('.updateProductStatus').on('click', function(){
@@ -216,6 +216,58 @@ $(function(){
         });
     });
 
+
+        /** 
+            BRAND PAGE CODE
+        */
+         $('#brands').DataTable({'responsive': true});
+
+         $('.updateBrandStatus').on('click', function(){
+             var status = $(this).text()
+             var brand_id = $(this).attr('brand_id')
+             $.ajax({
+                 type: 'post',
+                 url: '/admin/update-brand-status/',
+                 data: {status: status, brand_id: brand_id},
+                 success: function(resp){
+                     if(resp['status'] == 0){
+                         $('#brand-'+brand_id).html('Inactive')
+                     }else{
+                         $('#brand-'+brand_id).html('Active')
+                     }
+                 },
+                 error: function(err){
+                     alert(err)
+                 }
+             });
+         });
+     
+         /*
+         *   Confirm Delete Alert
+         */
+        $('.confirmDelete').on('click', function(){
+         let record = $(this).attr('record')
+         let recordId = $(this).attr('recordid')
+     
+         Swal.fire({
+             title: 'Are you sure?',
+             text: "You won't be able to revert this!",
+             icon: 'warning',
+             showCancelButton: true,
+             confirmButtonColor: '#3085d6',
+             cancelButtonColor: '#d33',
+             confirmButtonText: 'Yes, delete it!'
+           }).then((result) => {
+             if (result.isConfirmed) {
+             //   Swal.fire(
+             //     'Deleted!',
+             //     'Your file has been deleted.',
+             //     'success'
+             //   )
+             window.location.href = "/admin/delete-"+record+"/"+recordId
+             }
+           })
+        });
 
 
 })

@@ -12,8 +12,6 @@ use App\Models\ProductImage;
 use Intervention\Image\Facades\Image;
 
 use Session;
-use stdClass;
-
 
 class ProductController extends Controller
 {
@@ -121,7 +119,7 @@ class ProductController extends Controller
                     $data['product_video'] = $videoName;
                 }
             }
-            // dd($product->id);
+           
             // dd($data);
 
             $product = Product::updateOrCreate(['id'=>$product->id], $data);
@@ -360,7 +358,7 @@ class ProductController extends Controller
         }
 
         // Delete image from table
-        // ProductImage::delete($id) is a querly buil;der method
+        // ProductImage::delete($id) is a querly builder method
         ProductImage::destroy($id); // destroy is ORM Method
 
         session::flash('success_message','Product Image has been deleted.');

@@ -82,6 +82,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="{{ url('admin/brands') }}" class="nav-link {{ request()->is('admin/brands') ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Brands</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{ url('admin/categories') }}" class="nav-link {{ request()->is('admin/categories') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Categories</p>

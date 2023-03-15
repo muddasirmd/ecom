@@ -38,6 +38,12 @@ Route::prefix('/admin')->namespace('Admin')->group(function(){
         Route::get('sections', 'SectionController@index');
         Route::post('update-section-status', 'SectionController@updateSectionStatus');
 
+        // Brands
+        Route::get('brands', 'BrandController@index');
+        Route::post('update-brand-status', 'BrandController@updateBrandStatus');
+        Route::get('delete-brand/{id}', 'BrandController@deleteBrand');
+        Route::match(['get', 'post'], 'add-edit-brand/{id?}', 'BrandController@addEditBrand');
+
         // Categories
         Route::get('categories', 'CategoryController@index');
         Route::post('update-category-status', 'CategoryController@updateCategoryStatus');
