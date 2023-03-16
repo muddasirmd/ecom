@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Section;
+use App\Models\Brand;
 use App\Models\ProductAttribute;
 use App\Models\ProductImage;
 use Intervention\Image\Facades\Image;
@@ -76,8 +77,9 @@ class ProductController extends Controller
             ];
             $this->validate($request, $rules, $customMessages);
             
-            $data = $request->all();
-            unset($data['_token']);
+            // $data = $request->all();
+            // unset($data['_token']);
+            $data = $request->except('_token');
 
             // If is_featured is empty set it to No (Because when checkbox is unchecked then is_featured attribute will not come with post data)
             if(empty($data['is_featured'])){
@@ -146,8 +148,9 @@ class ProductController extends Controller
         
         // Sections with Categories and Subcategories
         $sections = Section::with(['categories'])->get();
+        $brands = Brand::where('status', 1)->get();
 
-        return view('admin.products.add_edit_product')->with(compact('title', 'product', 'sections', 'fabrics', 
+        return view('admin.products.add_edit_product')->with(compact('title', 'product', 'sections', 'brands', 'fabrics', 
     'sleeves', 'patterns', 'fits', 'occasions'));
     }
 

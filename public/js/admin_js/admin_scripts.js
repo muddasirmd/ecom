@@ -28,7 +28,7 @@ $(function(){
      $('#sections').DataTable({'responsive': true});
 
     $('.updateSectionStatus').on('click', function(){
-        var status = $(this).text()
+        var status = $(this).children("i").attr('status')
         var section_id = $(this).attr('section_id')
         $.ajax({
             type: 'post',
@@ -36,9 +36,9 @@ $(function(){
             data: {status: status, section_id: section_id},
             success: function(resp){
                 if(resp['status'] == 0){
-                    $('#section-'+section_id).html('Inactive')
+                    $('#section-'+section_id).html('<i class="fas fa-toggle-off" aria-hidden="true" status="Inactive"></i>')
                 }else{
-                    $('#section-'+section_id).html('Active')
+                    $('#section-'+section_id).html('<i class="fas fa-toggle-on" aria-hidden="true" status="Active"></i>')
                 }
             },
             error: function(err){
@@ -99,7 +99,7 @@ $(function(){
     $('#products').DataTable({'responsive': true});
 
     $('.updateProductStatus').on('click', function(){
-        var status = $(this).text()
+        var status = $(this).children("i").attr('status')
         var product_id = $(this).attr('product_id')
         $.ajax({
             type: 'post',
@@ -107,9 +107,9 @@ $(function(){
             data: {status: status, product_id: product_id},
             success: function(resp){
                 if(resp['status'] == 0){
-                    $('#product-'+product_id).html('Inactive')
+                    $('#product-'+product_id).html('<i class="fas fa-toggle-off" aria-hidden="true" status="Inactive"></i>')
                 }else{
-                    $('#product-'+product_id).html('Active')
+                    $('#product-'+product_id).html('<i class="fas fa-toggle-on" aria-hidden="true" status="Active"></i>')
                 }
             },
             error: function(err){
@@ -223,7 +223,7 @@ $(function(){
          $('#brands').DataTable({'responsive': true});
 
          $('.updateBrandStatus').on('click', function(){
-             var status = $(this).text()
+             var status = $(this).children("i").attr('status')
              var brand_id = $(this).attr('brand_id')
              $.ajax({
                  type: 'post',
@@ -231,9 +231,9 @@ $(function(){
                  data: {status: status, brand_id: brand_id},
                  success: function(resp){
                      if(resp['status'] == 0){
-                         $('#brand-'+brand_id).html('Inactive')
+                         $('#brand-'+brand_id).html('<i class="fas fa-toggle-off" aria-hidden="true" status="Inactive"></i>')
                      }else{
-                         $('#brand-'+brand_id).html('Active')
+                         $('#brand-'+brand_id).html('<i class="fas fa-toggle-on" aria-hidden="true" status="Active"></i>')
                      }
                  },
                  error: function(err){
@@ -242,32 +242,32 @@ $(function(){
              });
          });
      
-         /*
-         *   Confirm Delete Alert
-         */
-        $('.confirmDelete').on('click', function(){
-         let record = $(this).attr('record')
-         let recordId = $(this).attr('recordid')
+        //  /*
+        //  *   Confirm Delete Alert
+        //  */
+        // $('.confirmDelete').on('click', function(){
+        //  let record = $(this).attr('record')
+        //  let recordId = $(this).attr('recordid')
      
-         Swal.fire({
-             title: 'Are you sure?',
-             text: "You won't be able to revert this!",
-             icon: 'warning',
-             showCancelButton: true,
-             confirmButtonColor: '#3085d6',
-             cancelButtonColor: '#d33',
-             confirmButtonText: 'Yes, delete it!'
-           }).then((result) => {
-             if (result.isConfirmed) {
-             //   Swal.fire(
-             //     'Deleted!',
-             //     'Your file has been deleted.',
-             //     'success'
-             //   )
-             window.location.href = "/admin/delete-"+record+"/"+recordId
-             }
-           })
-        });
+        //  Swal.fire({
+        //      title: 'Are you sure?',
+        //      text: "You won't be able to revert this!",
+        //      icon: 'warning',
+        //      showCancelButton: true,
+        //      confirmButtonColor: '#3085d6',
+        //      cancelButtonColor: '#d33',
+        //      confirmButtonText: 'Yes, delete it!'
+        //    }).then((result) => {
+        //      if (result.isConfirmed) {
+        //      //   Swal.fire(
+        //      //     'Deleted!',
+        //      //     'Your file has been deleted.',
+        //      //     'success'
+        //      //   )
+        //      window.location.href = "/admin/delete-"+record+"/"+recordId
+        //      }
+        //    })
+        // });
 
 
 })

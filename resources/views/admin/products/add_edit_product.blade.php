@@ -71,19 +71,7 @@
                                             placeholder="Enter Product Name"
                                             value="{{ !empty($product->id) ? $product->product_name : old('product_name') }}">
                                     </div>
-                                    {{-- <div id="appendCategoriesLevel">
-                                        @include('admin.categories.append_categories_level')
-                                    </div> --}}
-                                    <div class="form-group">
-                                        <label for="product_color">Product Color</label>
-                                        <input type="text" class="form-control" name="product_color" id="product_color"
-                                            placeholder="Enter Product Color"
-                                            value="{{ !empty($product->id) ? $product->product_color : old('product_color') }}">
-                                    </div>	
-
-                                </div>
-                                <!-- /.col -->
-                                <div class="col-md-6">
+                                   
                                     <div class="form-group">
                                         <label>Select Category</label>
                                         <select name="category_id" id="category_id" class="form-control select2"
@@ -108,13 +96,33 @@
                                         </select>
                                     </div>
                                     <!-- /.form-group -->
+
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-md-6">
+
                                     <div class="form-group">
-                                        <label for="product_code">Product Code</label>
-                                        <input type="text" class="form-control" name="product_code" id="product_code"
-                                            placeholder="Enter Product Code"
-                                            value="{{ !empty($product->id) ? $product->product_code : old('product_code') }}">
+                                        <label for="product_color">Product Color</label>
+                                        <input type="text" class="form-control" name="product_color" id="product_color"
+                                            placeholder="Enter Product Color"
+                                            value="{{ !empty($product->id) ? $product->product_color : old('product_color') }}">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Select Brand</label>
+                                        <select name="brand_id" id="brand_id" class="form-control select2"
+                                            style="width: 100%;">
+                                            <option selected="selected">Select</option>
+                                            @foreach ($brands as $brand)
+                                                <option value={{ $brand->id }} {{ $product->brand_id == $brand->id ? 'selected' : '' }}>
+                                                    {{ $brand->brand_name }}
+                                                </option>
+                                                       
+                                                @endforeach
+                                        </select>
                                     </div>
                                     <!-- /.form-group -->
+
                                 </div>
                                 <!-- /.col -->
                             </div>
@@ -122,6 +130,14 @@
 
                             <div class="row">
                                 <div class="col-12 col-sm-6">
+
+                                    <div class="form-group">
+                                        <label for="product_code">Product Code</label>
+                                        <input type="text" class="form-control" name="product_code" id="product_code"
+                                            placeholder="Enter Product Code"
+                                            value="{{ !empty($product->id) ? $product->product_code : old('product_code') }}">
+                                    </div>
+                                    <!-- /.form-group -->
                                     
                                     <div class="form-group">
                                         <label for="product_video">Product Video</label>
@@ -144,6 +160,11 @@
                                             </div>
                                         @endif
                                     </div>
+
+                                </div>
+                                <!-- /.col -->
+                                <div class="col-12 col-sm-6">
+
                                     <!-- /.form-group -->
                                     <div class="form-group">
                                         <label for="product_price">Product Price</label>
@@ -151,9 +172,6 @@
                                             placeholder="Enter Product Price"
                                             value="{{ !empty($product->id) ? $product->product_price : old('product_price') }}">
                                     </div>
-                                </div>
-                                <!-- /.col -->
-                                <div class="col-12 col-sm-6">
                                     
                                     <div class="form-group">
                                         <label for="product_image">Product Image</label>
@@ -179,8 +197,11 @@
                                         @else
                                             <img style="width: 80px; margin-top:5px;" src="{{ asset('images/admin_images/no_image.png') }}">
                                         @endif
-                                    </div>
-                                 
+                                    </div> 
+                                    <!-- /.form-group -->
+                                </div>
+                                <div class="col-12 col-sm-6">
+
                                     <div class="form-group">
                                         <label for="product_discount">Product Discount</label>
                                         <input type="text" class="form-control" name="product_discount"
@@ -189,16 +210,17 @@
                                     </div>
                                     <!-- /.form-group -->
                                     
-                                    <!-- /.form-group -->
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    
                                     <div class="form-group">
                                         <label for="product_weight">Product Weight</label>
                                         <input type="text" class="form-control" name="product_weight" id="product_weight"
                                             placeholder="Enter Product Weight"
                                             value="{{ !empty($product->id) ? $product->product_weight : old('product_weight') }}">
                                     </div>
+
+                                </div>
+
+                                <div class="col-12 col-sm-6">
+                                    
                                     <div class="form-group">
                                         <label for="fabric">Fabrics</label>
                                         <select name="fabric" id="fabric" class="form-control select2"
@@ -212,17 +234,18 @@
 
                                         </select>
                                     </div>
-                    
-                                </div>
 
-                                <div class="col-12 col-sm-6">
-                                    
                                     <div class="form-group">
                                         <label for="meta_title">Meta Title</label>
                                         <input type="text" class="form-control" name="meta_title" id="meta_title"
                                             placeholder="Enter Meta Title"
                                             value="{{ !empty($product->id) ? $product->meta_title : old('meta_title') }}">
                                     </div>
+                                    
+                                </div>
+
+                                <div class="col-12 col-sm-6">
+
                                     <div class="form-group">
                                         <label>Sleeves</label>
                                         <select name="sleeve" id="sleeve" class="form-control select2"
@@ -236,8 +259,7 @@
 
                                         </select>
                                     </div>
-                                </div>
-                                <div class="col-12 col-sm-6">
+
                                     <div class="form-group">
                                         <label>Patterns</label>
                                         <select name="pattern" id="pattern" class="form-control select2"
@@ -252,6 +274,10 @@
                                         </select>
                                     </div>
                                     <!-- /.form-group -->
+                                     
+                                </div>
+
+                                <div class="col-12 col-sm-6">
                                     
                                     <div class="form-group">
                                         <label>Occasions</label>
@@ -267,10 +293,7 @@
                                         </select>
                                     </div>
                                     <!-- /.form-group -->
-                                </div>
 
-                                <div class="col-12 col-sm-6">
-                                    
                                     <div class="form-group">
                                         <label for="wash_care">Fits</label>
                                         <select name="fit" id="fit" class="form-control select2"
@@ -285,17 +308,12 @@
                                         </select>
                                     </div>
                                     <!-- /.form-group -->
-                                    
-                                    <label for="is_featured">Featured Item</label>
-                                        <input type="checkbox" name="is_featured" id="is_featured"
-                                            value="Yes" @if (!empty($product->is_featured) && $product->is_featured == "Yes")
-                                                checked 
-                                             @endif>
-                                    <!-- /.form-group -->
+
                                 </div>
                                 <!-- /.col -->
 
                                 <div class="col-12 col-sm-6">
+
                                     <div class="form-group">
                                         <label>Product Description</label>
                                         <textarea class="form-control" rows="3" name="description" id="description" placeholder="Enter Description">{{ !empty($product->id) ? $product->description : old('description') }}</textarea>
@@ -311,17 +329,27 @@
                                 <!-- /.col -->
 
                                 <div class="col-12 col-sm-6">
+
                                     <div class="form-group">
                                         <label for="wash_care">Wash Care</label>
                                         <textarea class="form-control" rows="3" name="wash_care" id="wash_care"
                                             placeholder="Enter Wash Care">{{ !empty($product->id) ? $product->wash_care : old('wash_care') }}</textarea>
                                     </div>
+
                                     <div class="form-group">
                                         <label for="meta_description">Meta Description</label>
                                         <textarea class="form-control" rows="3" name="meta_description" id="meta_description"
                                             placeholder="Enter Description...">{{ !empty($product->id) ? $product->meta_description : old('meta_description') }}</textarea>
                                     </div>
-                                    
+                                    <!-- /.form-group -->
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="is_featured">Featured Item</label>
+                                        <input type="checkbox" name="is_featured" id="is_featured"
+                                            value="Yes" @if (!empty($product->is_featured) && $product->is_featured == "Yes")
+                                                checked 
+                                             @endif>
                                     <!-- /.form-group -->
                                 </div>
                                 
