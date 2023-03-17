@@ -12,15 +12,17 @@
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
 
-// All of the Admin Routes
+/**
+ *          All of the Admin Routes
+ **/
 Route::prefix('/admin')->namespace('Admin')->group(function(){
 
     Route::match(['get', 'post'], '/', 'AdminController@login');
@@ -77,4 +79,14 @@ Route::prefix('/admin')->namespace('Admin')->group(function(){
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+/**
+ *      Front Routes
+ * 
+ */
+
+ Route::namespace('Front')->group(function(){
+
+    Route::get('/', 'IndexController@index');
+ });
+
+// Route::get('/home', 'HomeController@index')->name('home');

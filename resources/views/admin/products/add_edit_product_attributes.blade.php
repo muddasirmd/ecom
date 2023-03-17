@@ -89,13 +89,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         
-                                        @if (!empty($product->product_image) && file_exists('images/admin_images/product_images/small/'.$product->product_image))
+                                        @if (!empty($product->product_image) && file_exists('images/admin/product_images/small/'.$product->product_image))
                                             <div>
                                                 <img style="width: 100px; margin-top:5px;"
-                                                    src="{{ asset('images/admin_images/product_images/small/' . $product->product_image) }}">
+                                                    src="{{ asset('images/admin/product_images/small/' . $product->product_image) }}">
                                             </div>
                                         @else
-                                            <img style="width: 80px; margin-top:5px;" src="{{ asset('images/admin_images/no_image.png') }}">
+                                            <img style="width: 80px; margin-top:5px;" src="{{ asset('images/admin/no_image.png') }}">
                                         @endif
                                     </div>
                                 </div>

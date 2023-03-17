@@ -108,7 +108,7 @@
                                         @if (!empty($category->category_image))
                                             <div>
                                                 <img style="width: 80px; margin-top:5px;"
-                                                    src="{{ asset('images/admin_images/category_images/' . $category->category_image) }}">
+                                                    src="{{ asset('images/admin/category_images/' . $category->category_image) }}">
                                                 &nbsp;
                                                 {{-- <a href="{{ url('admin/delete-category-image/' . $category->id) }}">Delete
                                                     Image</a> --}}

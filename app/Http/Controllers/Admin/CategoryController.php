@@ -61,7 +61,7 @@ class CategoryController extends Controller
                 $extension = $imageTmp->getClientOriginalExtension();
                 // Generate new image name
                 $imageName = rand(111,99999).'.'.$extension;
-                $imagePath = 'images/admin_images/category_images/'.$imageName;
+                $imagePath = 'images/admin/category_images/'.$imageName;
                 // Upload the image: Using Intervention package
                 Image::make($imageTmp)->save($imagePath);
                 $category->category_image = $imageName;
@@ -119,7 +119,7 @@ class CategoryController extends Controller
     public function deleteCategoryImage($id){
         $category = Category::select('category_image')->where('id', $id)->first();
 
-        $imagePath = 'images/admin_images/category_images/';
+        $imagePath = 'images/admin/category_images/';
 
         // Delete File
         if(file_exists($imagePath.$category->category_image)){
@@ -137,7 +137,7 @@ class CategoryController extends Controller
 
         $category = Category::where('id',$id)->first();
 
-        $imagePath = 'images/admin_images/category_images/';
+        $imagePath = 'images/admin/category_images/';
 
         // Delete Category Image File
         if(!empty($category->category_image) && file_exists($imagePath.$category->category_image)){

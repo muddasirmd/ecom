@@ -124,7 +124,7 @@ class AdminController extends Controller
                     $extension = $imageTmp->getClientOriginalExtension();
                     // Generate new image name
                     $imageName = rand(111,99999).'.'.$extension;
-                    $imagePath = 'images/admin_images/admin_photos/'.$imageName;
+                    $imagePath = 'images/admin/admin_photos/'.$imageName;
                     // Upload the image: Using Intervention package
                     Image::make($imageTmp)->save($imagePath);
                 }

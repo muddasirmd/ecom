@@ -153,7 +153,7 @@
                                         </div>
                                         @if (!empty($product->product_video) && file_exists('videos/product_images/small/'.$product->product_video))
                                             <div>
-                                                <a href="{{ url('images/admin_images/product_images/small/' . $product->product_image) }}" download>Download</a>
+                                                <a href="{{ url('images/admin/product_images/small/' . $product->product_image) }}" download>Download</a>
                                                 &nbsp;|&nbsp;
                                                 <a href="javascript:void(0)" class="confirmDelete" record='product-video'
                                                     recordid='{{ $product->id }}'>Delete Video</a>
@@ -185,17 +185,17 @@
                                                 <span class="input-group-text">Upload</span>
                                             </div>
                                         </div>
-                                        @if (!empty($product->product_image) && file_exists('images/admin_images/product_images/small/'.$product->product_image))
+                                        @if (!empty($product->product_image) && file_exists('images/admin/product_images/small/'.$product->product_image))
                                             <div>
                                                 <img style="width: 80px; margin-top:5px;"
-                                                    src="{{ asset('images/admin_images/product_images/small/' . $product->product_image) }}">
+                                                    src="{{ asset('images/admin/product_images/small/' . $product->product_image) }}">
                                                 &nbsp;
 
                                                 <a href="javascript:void(0)" class="confirmDelete" record='product-image'
                                                     recordid='{{ $product->id }}'>Delete Image</a>
                                             </div>
                                         @else
-                                            <img style="width: 80px; margin-top:5px;" src="{{ asset('images/admin_images/no_image.png') }}">
+                                            <img style="width: 80px; margin-top:5px;" src="{{ asset('images/admin/no_image.png') }}">
                                         @endif
                                     </div> 
                                     <!-- /.form-group -->

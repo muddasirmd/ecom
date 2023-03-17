@@ -39,7 +39,7 @@ class ProductController extends Controller
 
         $product = Product::where('id',$id)->first();
 
-        $imagePath = 'images/admin_images/product_images/';
+        $imagePath = 'images/admin/product_images/';
 
         // Delete Product Image File
         if(!empty($product->main_image) && file_exists($imagePath.$product->main_image)){
@@ -95,9 +95,9 @@ class ProductController extends Controller
                     // Generate new image name
                     $imageName = $imageTmp->getClientOriginalName();
                     $imageName = $imageName.'_'.rand(111,99999).'.'.$extension;
-                    $largeImagePath = 'images/admin_images/product_images/large/'.$imageName;
-                    $mediumImagePath = 'images/admin_images/product_images/medium/'.$imageName;
-                    $smallImagePath = 'images/admin_images/product_images/small/'.$imageName;
+                    $largeImagePath = 'images/admin/product_images/large/'.$imageName;
+                    $mediumImagePath = 'images/admin/product_images/medium/'.$imageName;
+                    $smallImagePath = 'images/admin/product_images/small/'.$imageName;
                     // Upload the image: Using Intervention package
                     Image::make($imageTmp)->save($largeImagePath);
                     Image::make($imageTmp)->resize(420,500)->save($mediumImagePath);
@@ -157,9 +157,9 @@ class ProductController extends Controller
     public function deleteProductImage($id){
         $product = Product::select('product_image')->where('id', $id)->first();
 
-        $smallImagePath = 'images/admin_images/product_images/small/';
-        $mediumImagePath = 'images/admin_images/product_images/medium/';
-        $largeImagePath = 'images/admin_images/product_images/large/';
+        $smallImagePath = 'images/admin/product_images/small/';
+        $mediumImagePath = 'images/admin/product_images/medium/';
+        $largeImagePath = 'images/admin/product_images/large/';
 
         // Delete File
         if(!empty($product->product_image) && file_exists($smallImagePath.$product->product_image)){
@@ -307,9 +307,9 @@ class ProductController extends Controller
                         // Generate new image name
                         $imageName = $img->getClientOriginalName();
                         $imageName = $imageName.'_'.rand(111,99999).'_'.time().'.'.$extension;
-                        $largeImagePath = 'images/admin_images/product_images/large/'.$imageName;
-                        $mediumImagePath = 'images/admin_images/product_images/medium/'.$imageName;
-                        $smallImagePath = 'images/admin_images/product_images/small/'.$imageName;
+                        $largeImagePath = 'images/admin/product_images/large/'.$imageName;
+                        $mediumImagePath = 'images/admin/product_images/medium/'.$imageName;
+                        $smallImagePath = 'images/admin/product_images/small/'.$imageName;
                         // Upload the image: Using Intervention package
                         Image::make($img)->save($largeImagePath);
                         Image::make($img)->resize(420,500)->save($mediumImagePath);
@@ -345,9 +345,9 @@ class ProductController extends Controller
     public function deleteProductImages($id){
         $img = ProductImage::select('image')->where('id', $id)->first();
 
-        $smallImagePath = 'images/admin_images/product_images/small/';
-        $mediumImagePath = 'images/admin_images/product_images/medium/';
-        $largeImagePath = 'images/admin_images/product_images/large/';
+        $smallImagePath = 'images/admin/product_images/small/';
+        $mediumImagePath = 'images/admin/product_images/medium/';
+        $largeImagePath = 'images/admin/product_images/large/';
 
         // Delete File
         if(!empty($img->image) && file_exists($smallImagePath.$img->image)){
