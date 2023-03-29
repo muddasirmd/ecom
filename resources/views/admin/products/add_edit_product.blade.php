@@ -83,7 +83,7 @@
 
                                                 @foreach ($section->categories as $category)
                                                     <option value={{ $category->id }}
-                                                        {{ $product->category_id == $category->id ? 'selected' : '' }}>
+                                                        {{ $product->category_id == $category->id ? 'selected' : ($category->id == old('category_id') ? 'selected' : '') }}>
                                                        &nbsp;&nbsp;&nbsp;--&nbsp;&nbsp; {{ $category->category_name }}</option>
                                                        @foreach ($category->subCategories as $subCategory)
                                                            <option value="{{ $subCategory->id }}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -112,9 +112,9 @@
                                         <label>Select Brand</label>
                                         <select name="brand_id" id="brand_id" class="form-control select2"
                                             style="width: 100%;">
-                                            <option selected="selected">Select</option>
+                                            <option selected="selected" value="">Select</option>
                                             @foreach ($brands as $brand)
-                                                <option value={{ $brand->id }} {{ $product->brand_id == $brand->id ? 'selected' : '' }}>
+                                                <option value={{ $brand->id }} {{ $product->brand_id == $brand->id ? 'selected' : ($brand->id == old('brand_id') ? 'selected' : '') }}>
                                                     {{ $brand->brand_name }}
                                                 </option>
                                                        
@@ -222,6 +222,7 @@
                                 <div class="col-12 col-sm-6">
                                     
                                     <div class="form-group">
+                                        
                                         <label for="fabric">Fabrics</label>
                                         <select name="fabric" id="fabric" class="form-control select2"
                                             style="width: 100%;">
@@ -229,7 +230,7 @@
 
                                             @foreach ($fabrics as $fabric)
                                                 <option value={{ $fabric['key'] }} 
-                                                {{ $product->fabric == $fabric['key'] ? 'selected' : '' }}>{{ $fabric['val'] }}</option>
+                                                {{ $product->fabric == $fabric['key'] ? 'selected' : ($fabric['key'] == old('fabric') ? 'selected' : '') }}>{{ $fabric['val'] }}</option>
                                             @endforeach
 
                                         </select>
@@ -254,7 +255,7 @@
 
                                             @foreach ($sleeves as $sleeve)
                                                 <option value={{ $sleeve['key'] }} 
-                                                {{ $product->sleeve == $sleeve['key'] ? 'selected' : '' }}>{{ $sleeve['val'] }}</option>
+                                                {{ $product->sleeve == $sleeve['key'] ? 'selected' : ($sleeve['key'] == old('sleeve') ? 'selected' : '') }}>{{ $sleeve['val'] }}</option>
                                             @endforeach
 
                                         </select>
@@ -268,7 +269,7 @@
 
                                             @foreach ($patterns as $pattern)
                                                 <option value={{ $pattern['key'] }} 
-                                                {{ $product->pattern == $pattern['key'] ? 'selected' : '' }} >{{ $pattern['val'] }}</option>
+                                                {{ $product->pattern == $pattern['key'] ? 'selected' : ($pattern['key'] == old('pattern') ? 'selected' : '' )}} >{{ $pattern['val'] }}</option>
                                             @endforeach
 
                                         </select>
@@ -287,7 +288,7 @@
 
                                             @foreach ($occasions as $occasion)
                                                 <option value={{ $occasion['key'] }}
-                                                {{ $product->occasion == $occasion['key'] ? 'selected' : '' }}>{{ $occasion['val'] }}</option>
+                                                {{ $product->occasion == $occasion['key'] ? 'selected' : ( $occasion['key'] == old('occasion') ? 'selected' : '' )}}>{{ $occasion['val'] }}</option>
                                             @endforeach
 
                                         </select>
@@ -302,7 +303,7 @@
 
                                             @foreach ($fits as $fit)
                                                 <option value={{ $fit['key'] }} 
-                                                {{ $product->fit == $fit['key'] ? 'selected' : '' }}>{{ $fit['val'] }}</option>
+                                                {{ $product->fit == $fit['key'] ? 'selected' : ($fit['key'] == old('fit') ? 'selected' : '' )}}>{{ $fit['val'] }}</option>
                                             @endforeach
 
                                         </select>

@@ -17,7 +17,7 @@ use Session;
 class ProductController extends Controller
 {
     public function index(){
-        $products = Product::with(['category.section'])->get();
+        $products = Product::with(['category.section'])->orderBy('id', 'desc')->get();
         return view('admin.products.products')->with(compact('products'));
     }
 
