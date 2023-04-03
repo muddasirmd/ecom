@@ -51,6 +51,7 @@
                     <th>ID</th>
                     <th>Name</th>
                     <th>Status</th>
+                    <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -67,8 +68,8 @@
                                     <a href="javascript:void(0)" class="updateBrandStatus" id="brand-{{$brand->id}}" 
                                       brand_id='{{$brand->id}}'><i class="fas fa-toggle-off" aria-hidden="true" status="Inactive"></i></a>
                                 @endif
-                                &nbsp;&nbsp;
-
+                            </td>
+                            <td>
                                 <a title="Edit Brand" href="{{ url('admin/add-edit-brand/'.$brand->id) }}"><i class="fas fa-edit"></i></a>
                                 &nbsp;&nbsp;
                                 <a title="Delete Brand" href="javascript:void(0)" class="confirmDelete" record='brand' recordid='{{$brand->id}}'><i class="fas fa-trash"></i></a>

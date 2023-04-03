@@ -75,16 +75,17 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ url('admin/sections') }}" class="nav-link {{ request()->is('admin/sections') ? 'active' : '' }}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Sections</p>
-                </a>
-              </li>
+              
               <li class="nav-item">
                 <a href="{{ url('admin/brands') }}" class="nav-link {{ request()->is('admin/brands') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Brands</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('admin/banners') }}" class="nav-link {{ request()->is('admin/banners') ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Banners</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -97,6 +98,12 @@
                 <a href="{{ url('admin/products') }}" class="nav-link {{ request()->is('admin/products') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Products</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('admin/sections') }}" class="nav-link {{ request()->is('admin/sections') ? 'active' : '' }}">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Sections</p>
                 </a>
               </li>
             </ul>

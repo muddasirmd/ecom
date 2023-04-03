@@ -215,32 +215,59 @@ $(function(){
             }
         });
     });
+    
+    /** 
+        BRAND PAGE CODE
+    */
+        $('#brands').DataTable({'responsive': true});
 
+        $('.updateBrandStatus').on('click', function(){
+            var status = $(this).children("i").attr('status')
+            var banner_id = $(this).attr('banner_id')
+            $.ajax({
+                type: 'post',
+                url: '/admin/update-banner-status/',
+                data: {status: status, banner_id: banner_id},
+                success: function(resp){
+                    if(resp['status'] == 0){
+                        $('#banner-'+banner_id).html('<i class="fas fa-toggle-off" aria-hidden="true" status="Inactive"></i>')
+                    }else{
+                        $('#banner-'+banner_id).html('<i class="fas fa-toggle-on" aria-hidden="true" status="Active"></i>')
+                    }
+                 },
+                error: function(err){
+                    alert(err)
+                }
+             });
+        });
 
         /** 
-            BRAND PAGE CODE
+            BANNER PAGE CODE
         */
-         $('#brands').DataTable({'responsive': true});
+        $('#banners').DataTable({'responsive': true});
 
-         $('.updateBrandStatus').on('click', function(){
-             var status = $(this).children("i").attr('status')
-             var brand_id = $(this).attr('brand_id')
-             $.ajax({
-                 type: 'post',
-                 url: '/admin/update-brand-status/',
-                 data: {status: status, brand_id: brand_id},
-                 success: function(resp){
-                     if(resp['status'] == 0){
-                         $('#brand-'+brand_id).html('<i class="fas fa-toggle-off" aria-hidden="true" status="Inactive"></i>')
-                     }else{
-                         $('#brand-'+brand_id).html('<i class="fas fa-toggle-on" aria-hidden="true" status="Active"></i>')
-                     }
+        $('.updateBannerStatus').on('click', function(){
+            var status = $(this).children("i").attr('status')
+            var banner_id = $(this).attr('banner_id')
+            $.ajax({
+                type: 'post',
+                url: '/admin/update-banner-status/',
+                data: {status: status, banner_id: banner_id},
+                success: function(resp){
+                    if(resp['status'] == 0){
+                        $('#banner-'+banner_id).html('<i class="fas fa-toggle-off" aria-hidden="true" status="Inactive"></i>')
+                    }else{
+                        $('#banner-'+banner_id).html('<i class="fas fa-toggle-on" aria-hidden="true" status="Active"></i>')
+                    }
                  },
-                 error: function(err){
-                     alert(err)
-                 }
+                error: function(err){
+                    alert(err)
+                }
              });
-         });
+        });
+
+
+        
      
         //  /*
         //  *   Confirm Delete Alert

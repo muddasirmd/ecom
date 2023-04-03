@@ -40,11 +40,18 @@ Route::prefix('/admin')->namespace('Admin')->group(function(){
         Route::get('sections', 'SectionController@index');
         Route::post('update-section-status', 'SectionController@updateSectionStatus');
 
+        // Banners
+        Route::get('banners', 'BannerController@index');
+        Route::post('update-banner-status', 'BannerController@updateBannerStatus');
+        Route::match(['get', 'post'], 'add-edit-banner/{id?}', 'BannerController@addEditBanner');
+        Route::get('delete-banner/{id}', 'BannerController@deleteBanner');
+
         // Brands
         Route::get('brands', 'BrandController@index');
         Route::post('update-brand-status', 'BrandController@updateBrandStatus');
         Route::get('delete-brand/{id}', 'BrandController@deleteBrand');
         Route::match(['get', 'post'], 'add-edit-brand/{id?}', 'BrandController@addEditBrand');
+        
 
         // Categories
         Route::get('categories', 'CategoryController@index');
@@ -57,9 +64,8 @@ Route::prefix('/admin')->namespace('Admin')->group(function(){
         // Products
         Route::get('products', 'ProductController@index');
         Route::post('update-product-status', 'ProductController@updateProductStatus');
-        Route::match(['get', 'post'], 'add-edit-product/{id?}', 'ProductController@addEditProduct');
+        Route::match(['get', 'post'], 'add-edit-product/{id?}', "ProductController@addEditProduct");
         Route::get('delete-product/{id}', 'ProductController@deleteProduct');
-        Route::match(['get','post'], 'add-edit-product/{id?}',"ProductController@addEditProduct");
         Route::get('delete-product-image/{id}', 'ProductController@deleteProductImage');
         Route::get('delete-product-video/{id}', 'ProductController@deleteProductVideo');
         // Product Attributes
@@ -72,6 +78,7 @@ Route::prefix('/admin')->namespace('Admin')->group(function(){
         Route::post('edit-product-image/{id?}', 'ProductController@editProductImages');
         Route::post('update-product-image-status', 'ProductController@updateProductImageStatus');
         Route::get('delete-product-images/{id}', 'ProductController@deleteProductImages');
+
 
     });    
     
