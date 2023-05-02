@@ -39,6 +39,10 @@ class AdminController extends Controller
                 return redirect()->back();
             }
         }
+
+        if(Auth::guard('admin')->check()){
+            return view('admin.admin_dashboard');
+        }
         return view('admin.admin_login');
     }
 

@@ -11,8 +11,7 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 Step By Step Development.docx
-/public/images/admin_images/product_images/
-/public/images/admin_images/category_images/
 /public/images/admin/product_images/
 /public/images/admin/category_images/
+/public/images/admin/banner_images/
 /public/videos
