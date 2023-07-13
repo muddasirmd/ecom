@@ -95,6 +95,7 @@ Auth::routes();
  Route::namespace('Front')->group(function(){
 
     Route::get('/', 'IndexController@index');
+    Route::get('/{url}', 'ProductController@listing');
  });
 
 // Route::get('/home', 'HomeController@index')->name('home');

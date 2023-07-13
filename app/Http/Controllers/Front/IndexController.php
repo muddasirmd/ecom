@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Section;
 use App\Models\Product;
 
 class IndexController extends Controller
@@ -21,10 +20,7 @@ class IndexController extends Controller
         // Latest Products
         $latest_products = Product::where('status', 1)->orderBy('id', 'desc')->limit(6)->get();
 
-
-        $sections = Section::get();
-
-        return view('front.index')->with(compact('page_name', 'sections', 'featured_products', 
+        return view('front.index')->with(compact('page_name', 'featured_products', 
                                                 'featured_products_count', 'latest_products'));
     }
 }

@@ -48,7 +48,7 @@ class ProductController extends Controller
 
         $product->delete();
 
-        session::flash('success_message','Product has been deleted.');
+        Session::flash('success_message','Product has been deleted.');
         return redirect()->back();
     }
 

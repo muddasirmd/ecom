@@ -15,6 +15,14 @@ class Category extends Model
     }
 
     public function parentCategory(){
-        return $this->belongsTo(Category::class,'parent_id')->select('id','category_name');
+        return $this->belongsTo(Category::class,'parent_id')->select('id','category_name', 'url');
+    }
+
+    public function scopeCategoryByUrl($query, $url){
+        $category = $query->select('id', 'parent_id', 'category_name', 'url', 'description')->with(['subCategories' => function($q){
+            $q->select('id', 'parent_id')->where('status', 1);
+        }])->where('url', $url)->first();
+
+        return $category;
     }
 }

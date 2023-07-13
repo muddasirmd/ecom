@@ -24,6 +24,7 @@
 	<style type="text/css" id="enject"></style>
 </head>
 <body>
+
 @include('layouts.front.front_header')
 <!-- Header End====================================================================== -->
 
